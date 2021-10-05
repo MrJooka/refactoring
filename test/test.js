@@ -3,7 +3,10 @@ const { expect } = require('chai');
 const { describe, it } = require('mocha');
 
 describe('province', function () {
-  const asia = new Province(sampleProvinceData()); // 잘못 된 테스트 방법
+  let asia;
+  beforeEach(function () {
+    asia = new Province(sampleProvinceData());
+  });
   it('shortfall', function () {
     expect(asia.shortfall).equal(5);
   });
